@@ -1,4 +1,5 @@
-var clubs = [
+// menyimpan data clubs
+const clubs = [
   {
     name: 'Arsenal',
     stadium: 'Emirates Stadium',
