@@ -1,26 +1,24 @@
-const main = function () {
+const main = () => {
   // cari element yang dibutuhkan
   const searchElement = document.querySelector('#searchElement');
   const buttonSearchElement = document.querySelector('#searchButtonElement');
   const clubListElement = document.querySelector('#clubList');
 
   // beri fungsi untuk event cllick button
-  const onButtonSearchClicked = function () {
-    // buat object pada data source dan berisi paramater fungsi
-    // jika berhasil => 0
-    // jika gagal => 1
-    const dataSource = new DataSource(renderResult, fallbackResult);
-    // jalankan method search club pada class data source
-    // parameter berisi value input
-    dataSource.searchClub(searchElement.value);
+  const onButtonSearchClicked = async () => {
+    // dalam class DataSource terdapat static method yang mengembalikan promise
+    try {
+      const result = await DataSource.searchClub(searchElement.value);
+      renderResult(result);
+    } catch (error) {
+      fallbackResult(error);
+    }
   };
 
-  const renderResult = function (results) {
+  const renderResult = (results) => {
     clubListElement.innerHTML = '';
-    results.forEach(function (club) {
-      const name = club.name;
-      const fanArt = club.fanArt;
-      const description = club.description;
+    results.forEach((club) => {
+      const { name, fanArt, description } = club;
 
       const clubElement = document.createElement('div');
       clubElement.setAttribute('class', 'club');
@@ -37,7 +35,7 @@ const main = function () {
     });
   };
 
-  const fallbackResult = function (message) {
+  const fallbackResult = (message) => {
     clubListElement.innerHTML = '';
     clubListElement.innerHTML += `<h2 class="placeholder">${message}</h2>`;
   };
