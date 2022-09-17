@@ -1,0 +1,24 @@
+{
+  "name": "clubfinder",
+  "version": "1.0.0",
+  "description": "Project untuk latihan Front-End Web Development - dicoding",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akmalluthfi/ClubFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akmalluthfi/ClubFinder/issues"
+  },
+  "homepage": "https://github.com/akmalluthfi/ClubFinder#readme",
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "moment": "^2.29.4"
+  }
+}
