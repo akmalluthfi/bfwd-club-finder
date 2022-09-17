@@ -1,6 +1,6 @@
-import DataSource from '../data/data-source.js';
+import { DataSource } from '../data/data-source.js';
 
-const main = () => {
+export const main = () => {
   // cari element yang dibutuhkan
   const searchElement = document.querySelector('#searchElement');
   const buttonSearchElement = document.querySelector('#searchButtonElement');
@@ -45,4 +45,4 @@ const main = () => {
   buttonSearchElement.addEventListener('click', onButtonSearchClicked);
 };
 
-export default main;
+// export default main;

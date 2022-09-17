@@ -1,6 +1,6 @@
-import clubs from './clubs.js';
+import { clubs } from './clubs.js';
 
-class DataSource {
+export class DataSource {
   static searchClub(keyword) {
     return new Promise((resolve, reject) => {
       const filteredClubs = clubs.filter((club) =>
@@ -15,5 +15,3 @@ class DataSource {
     });
   }
 }
-
-export default DataSource;
