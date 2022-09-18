@@ -11,6 +11,8 @@ class ClubList extends HTMLElement {
    */
   set clubs(clubs) {
     this._clubs = clubs;
+
+    console.log(clubs);
     this.render();
   }
 

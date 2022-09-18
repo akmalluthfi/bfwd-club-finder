@@ -14,11 +14,26 @@ export const main = () => {
   // beri fungsi untuk event cllick button
   const onButtonSearchClicked = async () => {
     // dalam class DataSource terdapat static method yang mengembalikan promise
+    // try {
+    //   const result = await DataSource.searchClub(searchElement.value);
+    //   renderResult(result);
+    // } catch (error) {
+    //   fallbackResult(error);
+    // }
+
     try {
-      const result = await DataSource.searchClub(searchElement.value);
-      renderResult(result);
+      const response = await fetch(
+        'https://sports-api.dicoding.dev/teams/search?t=' + searchElement.value
+      );
+
+      const result = await response.json();
+
+      if (result.teams.length <= 0)
+        throw new Error(searchElement.value + 'is not found');
+
+      renderResult(result.teams);
     } catch (error) {
-      fallbackResult(error);
+      fallbackResult(error.message);
     }
   };
 
