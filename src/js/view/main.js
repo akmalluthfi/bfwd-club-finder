@@ -1,4 +1,3 @@
-import { DataSource } from '../data/data-source.js';
 import moment from 'moment';
 // import element
 import '../components/SearchBar.js';
@@ -13,14 +12,6 @@ export const main = () => {
 
   // beri fungsi untuk event cllick button
   const onButtonSearchClicked = async () => {
-    // dalam class DataSource terdapat static method yang mengembalikan promise
-    // try {
-    //   const result = await DataSource.searchClub(searchElement.value);
-    //   renderResult(result);
-    // } catch (error) {
-    //   fallbackResult(error);
-    // }
-
     try {
       const response = await fetch(
         'https://sports-api.dicoding.dev/teams/search?t=' + searchElement.value
