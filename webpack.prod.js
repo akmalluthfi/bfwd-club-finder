@@ -1,18 +1,10 @@
-const path = require('path');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
 
-module.exports = {
+module.exports = merge(common, {
   mode: 'production',
-  entry: './src/js/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
@@ -25,4 +17,4 @@ module.exports = {
       },
     ],
   },
-};
+});
