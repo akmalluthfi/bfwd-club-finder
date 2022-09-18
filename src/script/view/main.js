@@ -1,4 +1,5 @@
 import { DataSource } from '../data/data-source.js';
+
 // import element
 import '../components/SearchBar.js';
 import '../components/ClubList.js';
@@ -32,8 +33,10 @@ export const main = () => {
   // clock
   const displayTime = () => {
     moment.locale('id');
-    $('.time').text(moment().format('LTS'));
-    $('.date').text(moment().format('LL'));
+    const time = document.querySelector('.time');
+    time.innerHTML = moment().format('LTS');
+    const date = document.querySelector('.time');
+    date.innerHTML = moment().format('LTS');
   };
 
   const updateTime = () => {
