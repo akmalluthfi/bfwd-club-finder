@@ -3,6 +3,8 @@ import moment from 'moment';
 // import element
 import '../components/SearchBar.js';
 import '../components/ClubList.js';
+// import styles
+import css from '../../css/style.css';
 
 export const main = () => {
   // cari element yang dibutuhkan
