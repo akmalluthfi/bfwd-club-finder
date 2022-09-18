@@ -4,7 +4,8 @@
   "description": "Project untuk latihan Front-End Web Development - dicoding",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "homepage": "https://github.com/akmalluthfi/ClubFinder#readme",
   "dependencies": {
     "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }
